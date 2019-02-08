@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //rollDice();
+        //updateUI();
         setContentView(R.layout.activity_main);
         mScore = findViewById(R.id.textViewScore);
         mHighScore = findViewById(R.id.textViewHighScore);
@@ -39,19 +42,19 @@ public class MainActivity extends AppCompatActivity {
         mLower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rollDice();
+               checkInput(false);
             }
         });
         mHigher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rollDice();
+                checkInput(true);
             }
         });
         mRestart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                reset();
             }
         });
     }
@@ -79,5 +82,45 @@ public class MainActivity extends AppCompatActivity {
                 mDice.setImageDrawable(getDrawable(R.drawable.dice6));
                 break;
         }
+    }
+    private void checkInput(boolean chooseHigher) {
+        rollDice();
+        if (valueCurrent == valuePrevious) {
+            throwAgain();
+        } else if (chooseHigher && valueCurrent > valuePrevious) {
+            answerCorrect();
+        } else if (chooseHigher && !(valueCurrent > valuePrevious)) {
+            answerIncorrect();
+        } else if (!chooseHigher && valueCurrent < valuePrevious) {
+            answerCorrect();
+        } else if (!chooseHigher && !(valueCurrent < valuePrevious)) {
+            answerIncorrect();
+        }
+        updateUI();
+    }
+    private void throwAgain() {
+        Toast.makeText(this, "Throw again...", Toast.LENGTH_SHORT).show();
+    }
+    private void answerCorrect() {
+        Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+        score++;
+    }
+    private void answerIncorrect() {
+        Toast.makeText(this, "Game over", Toast.LENGTH_SHORT).show();
+        if (score > highScore) {
+            highScore = score;
+        }
+        score = 0;
+    }
+    private void updateUI() {
+        mScore.setText("Score: " + score);
+        mHighScore.setText("HighScore: " + highScore);
+        mLastThrow.setText("Last throw: " + valuePrevious);
+    }
+    private void reset() {
+        score = 0;
+        highScore = 0;
+        valuePrevious = 0;
+        updateUI();
     }
 }
