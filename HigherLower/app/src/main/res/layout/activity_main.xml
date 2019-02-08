@@ -7,12 +7,69 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textViewScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="132dp"
+        android:text="Something"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textViewHighscore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="79dp" />
+
+    <TextView
+        android:id="@+id/textViewLastThrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="142dp" />
+
+    <Button
+        android:id="@+id/buttonHigher"
+        android:layout_width="0dp"
+        android:layout_height="79dp"
+        android:text="Higher"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="467dp" />
+
+    <Button
+        android:id="@+id/buttonLower"
+        android:layout_width="0dp"
+        android:layout_height="79dp"
+        android:text="Lower"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="467dp" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="190dp"
+        android:layout_height="90dp"
+        android:text="Reset"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="561dp" />
+
+    <ImageView
+        android:id="@+id/ImageViewDice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/dice1"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="205dp" />
 </android.support.constraint.ConstraintLayout>
