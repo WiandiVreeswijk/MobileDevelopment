@@ -8,15 +8,16 @@
 
     <TextView
         android:id="@+id/textViewScore"
-        android:layout_width="171dp"
+        android:layout_width="278dp"
         android:layout_height="60dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="110dp"
-        android:text="TextView"
+        android:text="Higher Lower"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -30,9 +31,9 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textViewLastThrow"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textViewLastThrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLastThrow"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -47,9 +48,9 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textViewScore"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toStartOf="@+id/textViewScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewScore"
         app:layout_constraintVertical_bias="0.016" />
 
@@ -60,7 +61,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Button"
+        android:text="Lower"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewHighScore"
@@ -73,7 +74,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="8dp"
-        android:text="Button"
+        android:text="Higher"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewHighScore"
@@ -87,7 +88,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Button"
+        android:text="Reset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonHigher"
         app:layout_constraintHorizontal_bias="0.0"
@@ -97,13 +98,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="171dp"
+        android:layout_height="171dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/buttonHigher"
-        app:layout_constraintStart_toStartOf="@+id/buttonLower"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewHighScore"
         app:srcCompat="@drawable/dice1" />
 </android.support.constraint.ConstraintLayout>
